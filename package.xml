@@ -22,9 +22,10 @@
   <run_depend>rqt_graph</run_depend>
   <run_depend>rqt_gui</run_depend>
   <run_depend>rqt_gui_py</run_depend>
-  <!--<run_depend>tf2</run_depend>
+  <run_depend>tf2</run_depend>
+  <run_depend>tf2_ros</run_depend>
 
   <export>
     <rqt_gui plugin="${prefix}/plugin.xml"/>
-  </export>-->
+  </export>
 </package>
