@@ -44,14 +44,12 @@ from python_qt_binding import loadUi
 from python_qt_binding.QtCore import QFile, QIODevice, QObject, Qt, Signal
 from python_qt_binding.QtGui import QFileDialog, QGraphicsScene, QIcon, QImage, QPainter, QWidget
 from python_qt_binding.QtSvg import QSvgGenerator
-
-
-from .dotcode_tf import RosTfTreeDotcodeGenerator
 from qt_dotgraph.pydotfactory import PydotFactory
 # from qt_dotgraph.pygraphvizfactory import PygraphvizFactory
 from qt_dotgraph.dot_to_qt import DotToQtGenerator
-
 from rqt_graph.interactive_graphics_view import InteractiveGraphicsView
+
+from .dotcode_tf import RosTfTreeDotcodeGenerator
 
 
 class RosTfTree(QObject):
