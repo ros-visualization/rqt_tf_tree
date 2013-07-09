@@ -2,7 +2,7 @@
   <name>rqt_tf_tree</name>
   <version>0.2.15</version>
   <description>rqt_tf_tree provides a GUI plugin for visualizing the ROS TF frame tree.</description>
-  <maintainer email="ablasdel@gmail.com">Aaron Blasdel</maintainer>
+  <author>Thibault Kruse</author>
   <maintainer email="isao.saito@mavs.uta.edu">Isaac Saito</maintainer>
 
   <license>BSD</license>
@@ -10,8 +10,6 @@
   <url type="website">http://ros.org/wiki/rqt_tf_tree</url>
   <url type="repository">https://github.com/ros-visualization/rqt_robot_plugins</url>
   <url type="bugtracker">https://github.com/ros-visualization/rqt_robot_plugins/issues</url>
-
-  <author>Thibault Kruse</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
