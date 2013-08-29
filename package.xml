@@ -1,6 +1,6 @@
 <package>
   <name>rqt_tf_tree</name>
-  <version>0.2.16</version>
+  <version>0.3.0</version>
   <description>rqt_tf_tree provides a GUI plugin for visualizing the ROS TF frame tree.</description>
   <author>Thibault Kruse</author>
   <maintainer email="isao.saito@mavs.uta.edu">Isaac Saito</maintainer>
