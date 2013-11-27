@@ -4,9 +4,14 @@
       A Python GUI plugin to visualize the ROS TF Tree.
     </description>
     <qtgui>
-      <label>ROS TF Tree</label>
+      <group>
+        <label>Visualization</label>
+        <icon type="theme">folder</icon>
+        <statustip>Plugins related to visualization.</statustip>
+      </group>
+      <label>TF Tree</label>
       <icon type="theme">preferences-system-network</icon>
-      <statustip>A Python GUI plugin to visualize the ROS TF tree.</statustip>
+      <statustip>A Python GUI plugin for visualizing the TF tree.</statustip>
     </qtgui>
   </class>
 </library>
