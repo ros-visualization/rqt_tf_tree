@@ -2,6 +2,9 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.3.2 (2014-01-08)
 ------------------
 * add groups for rqt plugins (`ros-visualization/rqt_common_plugins#167 <https://github.com/ros-visualization/rqt_common_plugins/issues/167>`_)
