@@ -102,7 +102,7 @@ class RosTfTree(QObject):
         self._widget.save_dot_push_button.pressed.connect(self._save_dot)
         self._widget.save_as_svg_push_button.setIcon(QIcon.fromTheme('document-save-as'))
         self._widget.save_as_svg_push_button.pressed.connect(self._save_svg)
-        self._widget.save_as_image_push_button.setIcon(QIcon.fromTheme('image'))
+        self._widget.save_as_image_push_button.setIcon(QIcon.fromTheme('image-x-generic'))
         self._widget.save_as_image_push_button.pressed.connect(self._save_image)
 
         self._deferred_fit_in_view.connect(self._fit_in_view,
