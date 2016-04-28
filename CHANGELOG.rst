@@ -2,6 +2,9 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.5.0 (2016-04-27)
 ------------------
 * Support Qt 5 (in Kinetic and higher) as well as Qt 4 (in Jade and earlier) (`#101 <https://github.com/ros-visualization/rqt_robot_plugins/pull/101>`_)
