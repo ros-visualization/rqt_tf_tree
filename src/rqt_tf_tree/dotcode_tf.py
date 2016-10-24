@@ -114,7 +114,7 @@ class RosTfTreeDotcodeGenerator(object):
             if not tf_frame_values['parent'] in data:
                 root = tf_frame_values['parent']
             self.dotcode_factory.add_node_to_graph(graph,
-                                                   tf_frame_values['parent'],
+                                                   str(tf_frame_values['parent']),
                                                    shape='ellipse')
 
             edge_label= '"Broadcaster: %s\\n' % str(tf_frame_values['broadcaster'])
@@ -123,7 +123,7 @@ class RosTfTreeDotcodeGenerator(object):
             edge_label += 'Most recent transform: %s\\n' % str(tf_frame_values['most_recent_transform'])
             edge_label += 'Oldest transform: %s"' % str(tf_frame_values['oldest_transform'])
             self.dotcode_factory.add_edge_to_graph(graph,
-                                                   tf_frame_values['parent'],
+                                                   str(tf_frame_values['parent']),
                                                    frame_dict,
                                                    label=edge_label)
 
