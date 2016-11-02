@@ -2,6 +2,10 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix tf parent to always convert to string (`#113 <https://github.com/ros-visualization/rqt_robot_plugins/pull/113>`_)
+
 0.5.4 (2016-09-19)
 ------------------
 
