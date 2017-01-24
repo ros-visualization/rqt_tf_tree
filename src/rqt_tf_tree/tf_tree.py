@@ -166,9 +166,9 @@ class RosTfTree(QObject):
         (nodes, edges) = self.dot_to_qt.dotcode_to_qt_items(self._current_dotcode,
                                                             highlight_level)
 
-        for node_item in nodes.itervalues():
+        for node_item in nodes.values():
             self._scene.addItem(node_item)
-        for edge_items in edges.itervalues():
+        for edge_items in edges.values():
             for edge_item in edge_items:
                 edge_item.add_to_scene(self._scene)
 
