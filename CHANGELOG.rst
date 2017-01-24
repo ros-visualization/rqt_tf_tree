@@ -2,6 +2,10 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* use Python 3 compatible syntax (`#121 <https://github.com/ros-visualization/rqt_robot_plugins/pull/121>`_)
+
 0.5.5 (2016-11-02)
 ------------------
 * fix tf parent to always convert to string (`#113 <https://github.com/ros-visualization/rqt_robot_plugins/pull/113>`_)
