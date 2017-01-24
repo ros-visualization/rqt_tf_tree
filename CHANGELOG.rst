@@ -2,8 +2,8 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.6 (2017-01-24)
+------------------
 * use Python 3 compatible syntax (`#121 <https://github.com/ros-visualization/rqt_robot_plugins/pull/121>`_)
 
 0.5.5 (2016-11-02)
