@@ -4,6 +4,7 @@
   <description>rqt_tf_tree provides a GUI plugin for visualizing the ROS TF frame tree.</description>
   <author>Thibault Kruse</author>
   <maintainer email="ablasdel@gmail.com">Aaron Blasdel</maintainer>
+  <maintainer email="gm130s@gmail.com">Isaac I.Y. Saito</maintainer>
 
   <license>BSD</license>
 
