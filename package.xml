@@ -7,9 +7,9 @@
 
   <license>BSD</license>
 
-  <url type="website">http://ros.org/wiki/rqt_tf_tree</url>
-  <url type="repository">https://github.com/ros-visualization/rqt_robot_plugins</url>
-  <url type="bugtracker">https://github.com/ros-visualization/rqt_robot_plugins/issues</url>
+  <url type="website">http://wiki.ros.org/rqt_tf_tree</url>
+  <url type="repository">https://github.com/ros-visualization/rqt_tf_tree</url>
+  <url type="bugtracker">https://github.com/ros-visualization/rqt_tf_tree/issues</url>
 
   <buildtool_depend>catkin</buildtool_depend>
 
