@@ -34,8 +34,7 @@
 import unittest
 import rospkg
 
-import tf
-from tf.srv import *
+import tf2_ros
 
 # get mock from pypi as 'mock'
 from mock import Mock, MagicMock, patch
@@ -46,7 +45,7 @@ from rqt_tf_tree.dotcode_tf import RosTfTreeDotcodeGenerator
 class DotcodeGeneratorTest(unittest.TestCase):
 
     def test_generate_dotcode(self):
-        with patch('tf.TransformListener') as tf:
+        with patch('tf2_ros.TransformListener') as tf:
             def tf_srv_fun_mock():
                 return tf
 
