@@ -79,3 +79,6 @@ class DotcodeGeneratorTest(unittest.TestCase):
             factoryMock.create_dot.assert_called_with(graphMock)
             
             self.assertEqual(graph, 'foo')
+
+if __name__ == '__main__':
+    unittest.main()
