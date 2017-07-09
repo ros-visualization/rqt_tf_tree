@@ -18,5 +18,6 @@ install(PROGRAMS scripts/rqt_tf_tree
 )
 
 if (CATKIN_ENABLE_TESTING)
-  catkin_add_nosetests(test/dotcode_tf_test.py)
+  catkin_add_nosetests(test/dotcode_tf_test.py
+     DEPENDENCIES ${${PROJECT_NAME}_EXPORTED_TARGETS})
 endif()
