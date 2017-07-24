@@ -116,6 +116,8 @@ class RosTfTreeDotcodeGenerator(object):
             self.dotcode_factory.add_node_to_graph(graph,
                                                    str(tf_frame_values['parent']),
                                                    shape='ellipse')
+            self.dotcode_factory.add_node_to_graph(
+                graph, frame_dict, shape='ellipse')
 
             edge_label= '"Broadcaster: %s\\n' % str(tf_frame_values['broadcaster'])
             edge_label += 'Average rate: %s\\n' % str(tf_frame_values['rate'])
