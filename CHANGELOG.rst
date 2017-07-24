@@ -2,8 +2,8 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.8 (2017-07-24)
+------------------
 * [fix] child_frame_id format `#6 <https://github.com/ros-visualization/rqt_tf_tree/issues/6>`_
 * Update maintainer
 * Contributors: Dirk Thomas, Isaac I.Y. Saito, Peter Han
