@@ -32,12 +32,11 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import unittest
-import rospkg
 
 import tf2_ros
 
 # get mock from pypi as 'mock'
-from mock import Mock, MagicMock, patch
+from mock import Mock, patch
 
 from rqt_tf_tree.dotcode_tf import RosTfTreeDotcodeGenerator
 
