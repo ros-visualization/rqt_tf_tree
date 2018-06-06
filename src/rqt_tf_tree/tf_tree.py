@@ -33,7 +33,6 @@
 from __future__ import division
 import os
 
-
 import rospy
 import rospkg
 

@@ -55,27 +55,27 @@ class DotcodeGeneratorTest(unittest.TestCase):
                                             'most_recent_transform': 'fr_most_recent_transform',
                                             'oldest_transform': 'fr_oldest_transform',}}
             tf.frame_yaml = str(yaml_data)
-            
+
             factoryMock = Mock()
             graphMock = Mock()
             timeMock = Mock()
             timerMock = Mock()
-            timerMock.now.return_value=timeMock
-            timeMock.to_sec.return_value=42
+            timerMock.now.return_value = timeMock
+            timeMock.to_sec.return_value = 42
 
             yamlmock = Mock()
             yamlmock.load.return_value = yaml_data
-            
+
             factoryMock.create_dot.return_value = "foo"
             factoryMock.get_graph.return_value = graphMock
-            
+
             gen = RosTfTreeDotcodeGenerator(0)
             graph = gen.generate_dotcode(factoryMock, tf_srv_fun_mock, timerMock)
 
             timerMock.now.assert_called_with()
             timeMock.to_sec.assert_called_with()
             factoryMock.create_dot.assert_called_with(graphMock)
-            
+
             self.assertEqual(graph, 'foo')
 
 if __name__ == '__main__':
