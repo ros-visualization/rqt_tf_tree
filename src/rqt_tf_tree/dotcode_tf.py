@@ -85,7 +85,7 @@ class RosTfTreeDotcodeGenerator(object):
             self.rankdir = rankdir
             self.ranksep = ranksep
 
-        #generate new dotcode
+        # generate new dotcode
         if force_refresh or self.dotcode is None or selection_changed:
             if self.listen_duration > 0:
                 time.sleep(self.listen_duration)
@@ -108,7 +108,6 @@ class RosTfTreeDotcodeGenerator(object):
             self.dotcode_factory.add_node_to_graph(graph, "No tf data received")
             return graph
 
-
         for frame_dict in data:
             tf_frame_values = data[frame_dict]
             if not tf_frame_values['parent'] in data:
@@ -119,7 +118,7 @@ class RosTfTreeDotcodeGenerator(object):
             self.dotcode_factory.add_node_to_graph(
                 graph, frame_dict, shape='ellipse')
 
-            edge_label= '"Broadcaster: %s\\n' % str(tf_frame_values['broadcaster'])
+            edge_label = '"Broadcaster: %s\\n' % str(tf_frame_values['broadcaster'])
             edge_label += 'Average rate: %s\\n' % str(tf_frame_values['rate'])
             edge_label += 'Buffer length: %s\\n' % str(tf_frame_values['buffer_length'])
             edge_label += 'Most recent transform: %s\\n' % str(tf_frame_values['most_recent_transform'])

@@ -16,3 +16,8 @@ install(DIRECTORY resource
 install(PROGRAMS scripts/rqt_tf_tree
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+
+if (CATKIN_ENABLE_TESTING)
+  catkin_add_nosetests(test/dotcode_tf_test.py
+     DEPENDENCIES ${${PROJECT_NAME}_EXPORTED_TARGETS})
+endif()
