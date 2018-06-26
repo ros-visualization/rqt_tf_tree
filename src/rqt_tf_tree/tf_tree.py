@@ -88,6 +88,9 @@ class RosTfTree(QObject):
         self._scene.setBackgroundBrush(Qt.white)
         self._widget.graphics_view.setScene(self._scene)
 
+        self._widget.clear_buffer_push_button.setIcon(QIcon.fromTheme('edit-clear'))
+        self._widget.clear_buffer_push_button.pressed.connect(self._clear_buffer)
+
         self._widget.refresh_graph_push_button.setIcon(QIcon.fromTheme('view-refresh'))
         self._widget.refresh_graph_push_button.pressed.connect(self._update_tf_graph)
 
@@ -126,6 +129,9 @@ class RosTfTree(QObject):
             instance_settings.value('highlight_connections_check_box_state', True) in [True, 'true'])
         self.initialized = True
         self._refresh_tf_graph()
+
+    def _clear_buffer(self):
+        self.tf2_buffer_.clear()
 
     def _update_tf_graph(self):
         self._force_refresh = True
