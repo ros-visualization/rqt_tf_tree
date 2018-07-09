@@ -104,7 +104,7 @@ class RosTfTreeDotcodeGenerator(object):
                                                rankdir=self.rankdir,
                                                ranksep=self.ranksep)
 
-        if len(data) == 0:
+        if data is None or len(data) == 0:
             self.dotcode_factory.add_node_to_graph(graph, "No tf data received")
             return graph
 
