@@ -88,7 +88,7 @@ class RosTfTree(QObject):
         self._scene.setBackgroundBrush(Qt.white)
         self._widget.graphics_view.setScene(self._scene)
 
-        self._widget.clear_buffer_push_button.setIcon(QIcon.fromTheme('edit-clear'))
+        self._widget.clear_buffer_push_button.setIcon(QIcon.fromTheme('edit-delete'))
         self._widget.clear_buffer_push_button.pressed.connect(self._clear_buffer)
 
         self._widget.refresh_graph_push_button.setIcon(QIcon.fromTheme('view-refresh'))
