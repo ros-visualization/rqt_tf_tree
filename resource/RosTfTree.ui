@@ -20,6 +20,13 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
      <item>
+      <widget class="QPushButton" name="clear_buffer_push_button">
+       <property name="toolTip">
+        <string>Clear TF Buffer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="refresh_graph_push_button">
        <property name="toolTip">
         <string>Refresh TF Tree</string>
