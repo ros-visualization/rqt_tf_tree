@@ -2,6 +2,12 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* [capability] add button for clearing the TF buffer `#9 <https://github.com/ros-visualization/rqt_tf_tree/issues/9>`_ from christian-rauch/clear_tf_buffer
+* [maintenance] Integrate an existing testcase upon build by Catkin. `#5 <https://github.com/ros-visualization/rqt_tf_tree/issues/5>`_
+* Contributors: Christian Rauch, Isaac I.Y. Saito, Peter Han
+
 0.5.8 (2017-07-24)
 ------------------
 * [fix] child_frame_id format `#6 <https://github.com/ros-visualization/rqt_tf_tree/issues/6>`_
