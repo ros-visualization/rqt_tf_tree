@@ -71,9 +71,9 @@ class RosTfTreeDotcodeGenerator(object):
 
         drawing_args = {
             'dotcode_factory': dotcode_factory,
-            "rank": rank,
-            "rankdir": rankdir,
-            "ranksep": ranksep}
+            'rank': rank,
+            'rankdir': rankdir,
+            'ranksep': ranksep}
 
         selection_changed = False
         if self.last_drawargs != drawing_args:
@@ -105,7 +105,7 @@ class RosTfTreeDotcodeGenerator(object):
                                                ranksep=self.ranksep)
 
         if data is None or len(data) == 0:
-            self.dotcode_factory.add_node_to_graph(graph, "No tf data received")
+            self.dotcode_factory.add_node_to_graph(graph, 'No tf data received')
             return graph
 
         for frame_dict in data:
