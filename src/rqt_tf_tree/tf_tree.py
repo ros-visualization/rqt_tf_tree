@@ -30,11 +30,9 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-from __future__ import division
 import os
 
-import rospy
-import rospkg
+from ament_index_python import get_resource
 
 from tf2_msgs.srv import FrameGraph
 import tf2_ros
@@ -62,6 +60,8 @@ class RosTfTree(QObject):
 
         self.setObjectName('RosTfTree')
 
+        self._node = context.node
+
         self._current_dotcode = None
 
         self._widget = QWidget()
@@ -72,13 +72,13 @@ class RosTfTree(QObject):
         # generator builds rosgraph
         self.dotcode_generator = RosTfTreeDotcodeGenerator()
         self.tf2_buffer_ = tf2_ros.Buffer()
-        self.tf2_listener_ = tf2_ros.TransformListener(self.tf2_buffer_)
+        self.tf2_listener_ = tf2_ros.TransformListener(self.tf2_buffer_, self._node)
 
         # dot_to_qt transforms into Qt elements using dot layout
         self.dot_to_qt = DotToQtGenerator()
 
-        rp = rospkg.RosPack()
-        ui_file = os.path.join(rp.get_path('rqt_tf_tree'), 'resource', 'RosTfTree.ui')
+        _, package_path = get_resource('packages', 'rqt_tf_tree')
+        ui_file = os.path.join(package_path, 'share', 'rqt_tf_tree', 'resource', 'RosTfTree.ui')
         loadUi(ui_file, self._widget, {'InteractiveGraphicsView': InteractiveGraphicsView})
         self._widget.setObjectName('RosTfTreeUi')
         if context.serial_number() > 1:
@@ -145,10 +145,14 @@ class RosTfTree(QObject):
     def _generate_dotcode(self):
         force_refresh = self._force_refresh
         self._force_refresh = False
-        rospy.wait_for_service('~tf2_frames')
-        tf2_frame_srv = rospy.ServiceProxy('~tf2_frames', FrameGraph)
+
+        tf2_frame_client = self._node.create_client(FrameGraph, 'tf2_frames')
+        while not tf2_frame_client.wait_for_service(timeout_sec=1.0):
+            print('service not available, waiting again...')
+
         return self.dotcode_generator.generate_dotcode(dotcode_factory=self.dotcode_factory,
-                                                       tf2_frame_srv=tf2_frame_srv,
+                                                       tf2_frame_srv=tf2_frame_client,
+                                                       timer=self._node.get_clock(),
                                                        force_refresh=force_refresh)
 
     def _update_graph_view(self, dotcode):
