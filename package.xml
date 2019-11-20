@@ -12,8 +12,6 @@
   <url type="repository">https://github.com/ros-visualization/rqt_tf_tree</url>
   <url type="bugtracker">https://github.com/ros-visualization/rqt_tf_tree/issues</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
-
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend version_gte="0.2.19">python_qt_binding</exec_depend>
   <exec_depend condition="$ROS_PYTHON_VERSION == 2">python-rospkg</exec_depend>
