@@ -2,6 +2,11 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.0 (2019-11-20)
+------------------
+* port package to ROS 2 (`#13 <https://github.com/ros-visualization/rqt_tf_tree/issues/13>`_)
+* minor cleanup (`#12 <https://github.com/ros-visualization/rqt_tf_tree/issues/12>`_)
+
 0.6.0 (2019-02-03)
 ------------------
 * [capability] add button for clearing the TF buffer `#9 <https://github.com/ros-visualization/rqt_tf_tree/issues/9>`_ from christian-rauch/clear_tf_buffer
