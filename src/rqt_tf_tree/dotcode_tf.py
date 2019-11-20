@@ -30,11 +30,11 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-from __future__ import with_statement, print_function
-
 import time
-import rospy
+import rclpy
 import yaml
+
+from tf2_msgs.srv import FrameGraph
 
 
 class RosTfTreeDotcodeGenerator(object):
@@ -56,7 +56,7 @@ class RosTfTreeDotcodeGenerator(object):
     def generate_dotcode(self,
                          dotcode_factory,
                          tf2_frame_srv,
-                         timer=rospy.Time,
+                         timer=rclpy.clock.Clock(),
                          yaml_parser=yaml,
                          rank='same',   # None, same, min, max, source, sink
                          ranksep=0.2,   # vertical distance between layers
@@ -92,9 +92,9 @@ class RosTfTreeDotcodeGenerator(object):
             # no need to listen more once we've listened for 1 sec?
             self.listen_duration = 0
 
-            yaml_data = tf2_frame_srv().frame_yaml
+            yaml_data = tf2_frame_srv.call(FrameGraph.Request()).frame_yaml
             data = yaml_parser.load(yaml_data)
-            self.graph = self.generate(data, timer.now().to_sec())
+            self.graph = self.generate(data, timer.now().nanoseconds / rclpy.time.CONVERSION_CONSTANT)
             self.dotcode = self.dotcode_factory.create_dot(self.graph)
 
         return self.dotcode
