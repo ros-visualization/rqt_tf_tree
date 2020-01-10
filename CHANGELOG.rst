@@ -2,6 +2,10 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.1 (2020-01-10)
+------------------
+* remove unused dependencies (`#14 <https://github.com/ros-visualization/rqt_tf_tree/issues/14>`_)
+
 1.0.0 (2019-11-20)
 ------------------
 * port package to ROS 2 (`#13 <https://github.com/ros-visualization/rqt_tf_tree/issues/13>`_)

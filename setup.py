@@ -5,7 +5,7 @@ from setuptools import setup
 package_name = 'rqt_tf_tree'
 setup(
     name=package_name,
-    version='1.0.0',
+    version='1.0.1',
     package_dir={'': 'src'},
     packages=[package_name],
     data_files=[
