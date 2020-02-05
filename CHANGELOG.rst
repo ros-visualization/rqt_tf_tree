@@ -2,6 +2,10 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.2 (2020-02-04)
+------------------
+* fix shebang of script to use Python 3 (`#18 <https://github.com/ros-visualization/rqt_tf_tree/issues/18>`_)
+
 1.0.1 (2020-01-10)
 ------------------
 * remove unused dependencies (`#14 <https://github.com/ros-visualization/rqt_tf_tree/issues/14>`_)
