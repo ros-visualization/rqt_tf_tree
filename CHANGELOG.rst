@@ -2,8 +2,8 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.1 (2020-03-17)
+------------------
 * bump CMake minimum version to avoid CMP0048 warning
 * remove unused dependencies (`#15 <https://github.com/ros-visualization/rqt_tf_tree/issues/15>`_)
 * minor cleanup (`#12 <https://github.com/ros-visualization/rqt_tf_tree/issues/12>`_)
