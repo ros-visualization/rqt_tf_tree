@@ -2,6 +2,12 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* bump CMake minimum version to avoid CMP0048 warning
+* remove unused dependencies (`#15 <https://github.com/ros-visualization/rqt_tf_tree/issues/15>`_)
+* minor cleanup (`#12 <https://github.com/ros-visualization/rqt_tf_tree/issues/12>`_)
+
 0.6.0 (2019-02-03)
 ------------------
 * [capability] add button for clearing the TF buffer `#9 <https://github.com/ros-visualization/rqt_tf_tree/issues/9>`_ from christian-rauch/clear_tf_buffer
