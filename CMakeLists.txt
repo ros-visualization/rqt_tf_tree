@@ -13,7 +13,7 @@ install(DIRECTORY resource
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-install(PROGRAMS scripts/rqt_tf_tree
+catkin_install_python(PROGRAMS scripts/rqt_tf_tree
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
