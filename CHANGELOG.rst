@@ -2,8 +2,8 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.2 (2020-09-14)
+------------------
 * fix shebang line for Python 3 (`#21 <https://github.com/ros-visualization/rqt_tf_tree/issues/21>`_)
 
 0.6.1 (2020-03-17)
