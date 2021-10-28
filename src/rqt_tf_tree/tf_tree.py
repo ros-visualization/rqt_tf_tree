@@ -71,7 +71,7 @@ class RosTfTree(QObject):
         # self.dotcode_factory = PygraphvizFactory()
         # generator builds rosgraph
         self.dotcode_generator = RosTfTreeDotcodeGenerator()
-        self.tf2_buffer_ = tf2_ros.Buffer()
+        self.tf2_buffer_ = tf2_ros.Buffer(node=self._node)
         self.tf2_listener_ = tf2_ros.TransformListener(self.tf2_buffer_, self._node)
 
         # dot_to_qt transforms into Qt elements using dot layout
