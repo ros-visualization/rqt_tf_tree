@@ -2,8 +2,8 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.3 (2021-11-12)
+------------------
 * fix breaking rqt_tree and update script installation. chg yaml full_load to safe_load (`#33 <https://github.com/ros-visualization/rqt_tf_tree/issues/33>`_)
 * update maintainers
 * Contributors: Mabel Zhang, youliangtan
