@@ -93,7 +93,7 @@ class RosTfTreeDotcodeGenerator(object):
             self.listen_duration = 0
 
             yaml_data = tf2_frame_srv.call(FrameGraph.Request()).frame_yaml
-            data = yaml_parser.load(yaml_data)
+            data = yaml_parser.safe_load(yaml_data)
             self.graph = self.generate(data, timer.now().nanoseconds / rclpy.time.CONVERSION_CONSTANT)
             self.dotcode = self.dotcode_factory.create_dot(self.graph)
 

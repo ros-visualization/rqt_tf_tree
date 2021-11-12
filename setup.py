@@ -14,7 +14,6 @@ setup(
         ('share/' + package_name + '/resource', ['resource/RosTfTree.ui']),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name, ['plugin.xml']),
-        ('lib/' + package_name, ['scripts/rqt_tf_tree'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -32,5 +31,9 @@ setup(
         'rqt_tf_tree provides a GUI plugin for visualizing the ROS TF frame tree.'
     ),
     license='BSD',
-    scripts=['scripts/rqt_tf_tree'],
+    entry_points={
+        'console_scripts': [
+            'rqt_tf_tree = ' + package_name + '.main:main'
+        ],
+    },
 )
