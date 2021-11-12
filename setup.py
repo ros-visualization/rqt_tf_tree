@@ -33,7 +33,7 @@ setup(
     license='BSD',
     entry_points={
         'console_scripts': [
-            'rqt_tf_tree = rqt_tf_tree.main:main'
+            'rqt_tf_tree = ' + package_name + '.main:main'
         ],
     },
 )
