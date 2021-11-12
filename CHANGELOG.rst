@@ -2,6 +2,12 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix breaking rqt_tree and update script installation. chg yaml full_load to safe_load (`#33 <https://github.com/ros-visualization/rqt_tf_tree/issues/33>`_)
+* update maintainers
+* Contributors: Mabel Zhang, youliangtan
+
 1.0.2 (2020-02-04)
 ------------------
 * fix shebang of script to use Python 3 (`#18 <https://github.com/ros-visualization/rqt_tf_tree/issues/18>`_)
