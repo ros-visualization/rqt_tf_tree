@@ -2,6 +2,11 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.3 (2022-03-29)
+------------------
+* Added new maintainers
+* Use yaml.safe_load instead of yaml.load fixing (`#29 <https://github.com/ros-visualization/rqt_tf_tree/issues/29>`_)
+
 0.6.2 (2020-09-14)
 ------------------
 * fix shebang line for Python 3 (`#21 <https://github.com/ros-visualization/rqt_tf_tree/issues/21>`_)
