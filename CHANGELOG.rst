@@ -2,6 +2,12 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.4 (2022-08-25)
+------------------
+* fixed error in LICENSE
+* add LICENSE file
+* add maintainer
+
 1.0.3 (2021-11-12)
 ------------------
 * fix breaking rqt_tree and update script installation. chg yaml full_load to safe_load (`#33 <https://github.com/ros-visualization/rqt_tf_tree/issues/33>`_)
