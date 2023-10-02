@@ -216,7 +216,7 @@ class RosTfTree(QObject):
         if not file.open(QIODevice.WriteOnly | QIODevice.Text):
             return
 
-        file.write(self._current_dotcode)
+        file.write(bytes(self._current_dotcode, 'utf-8'))
         file.close()
 
     def _save_svg(self):
