@@ -4,7 +4,7 @@
   schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>rqt_tf_tree</name>
-  <version>0.6.3</version>
+  <version>0.6.4</version>
   <description>rqt_tf_tree provides a GUI plugin for visualizing the ROS TF frame tree.</description>
   <author>Thibault Kruse</author>
   <maintainer email="gm130s@gmail.com">Isaac I.Y. Saito</maintainer>
