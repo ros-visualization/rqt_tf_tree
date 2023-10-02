@@ -2,6 +2,13 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.4 (2023-10-02)
+------------------
+* Fix dot save according to the PyQt5 (`#28 <https://github.com/ros-visualization/rqt_tf_tree/issues/28>`_)
+* Import setup from setuptools instead of distutils.core (`#45 <https://github.com/ros-visualization/rqt_tf_tree/issues/45>`_)
+* Add xml-model
+* Add LICENSE file
+
 0.6.3 (2022-03-29)
 ------------------
 * Added new maintainers
