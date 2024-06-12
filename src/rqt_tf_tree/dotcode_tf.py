@@ -34,6 +34,7 @@ import time
 import rclpy
 import yaml
 
+from rclpy import clock
 from rclpy.constants import S_TO_NS
 from tf2_msgs.srv import FrameGraph
 
