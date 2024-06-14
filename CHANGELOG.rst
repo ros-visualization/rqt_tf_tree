@@ -2,6 +2,12 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.5 (2024-06-14)
+------------------
+* Explicitly import clock to fix test fail in Humble (`#50 <https://github.com/ros-visualization/rqt_tf_tree/issues/50>`_)
+* Fixed pytest for buildfarm (`#49 <https://github.com/ros-visualization/rqt_tf_tree/issues/49>`_)
+* Use S_TO_NS from rclpy.constants instead of rclpy.time.CONVERSION_CONSTANT (`#48 <https://github.com/ros-visualization/rqt_tf_tree/issues/48>`_)
+
 1.0.4 (2022-08-25)
 ------------------
 * fixed error in LICENSE
