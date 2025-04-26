@@ -2,8 +2,8 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.5 (2025-04-26)
+------------------
 * Bump cmake_minimum_required to avoid deprecation (`#51 <https://github.com/ros-visualization/rqt_tf_tree/issues/51>`_)
 * Contributors: Arne Hitzmann
 
