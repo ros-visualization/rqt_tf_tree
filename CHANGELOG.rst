@@ -2,6 +2,11 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Bump cmake_minimum_required to avoid deprecation (`#51 <https://github.com/ros-visualization/rqt_tf_tree/issues/51>`_)
+* Contributors: Arne Hitzmann
+
 0.6.4 (2023-10-02)
 ------------------
 * Fix dot save according to the PyQt5 (`#28 <https://github.com/ros-visualization/rqt_tf_tree/issues/28>`_)
