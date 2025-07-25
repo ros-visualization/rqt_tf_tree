@@ -104,7 +104,6 @@ class RosTfTreeDotcodeGenerator(object):
             yaml.SafeLoader.construct_mapping = my_construct_mapping
 
             data = yaml_parser.safe_load(yaml_data)
-            print(data)
             self.graph = self.generate(data, timer.now().nanoseconds / S_TO_NS)
             self.dotcode = self.dotcode_factory.create_dot(self.graph)
 
