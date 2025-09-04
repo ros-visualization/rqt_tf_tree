@@ -101,7 +101,7 @@ class RosTfTreeDotcodeGenerator(object):
                 return {(str(key) if isinstance(key, int) else key): data[key] for key in data}
 
             yaml.SafeLoader.construct_mapping_org = yaml.SafeLoader.construct_mapping
-            yaml.SafeLoader.construct_mapping = my_construct_mapping
+            yaml.SafeLoader.construct_mapping = default_tftree_construct_mapping
 
             data = yaml_parser.safe_load(yaml_data)
             self.graph = self.generate(data, timer.now().nanoseconds / S_TO_NS)
