@@ -96,7 +96,7 @@ class RosTfTreeDotcodeGenerator(object):
 
             yaml_data = tf2_frame_srv.call(FrameGraph.Request()).frame_yaml
 
-            def my_construct_mapping(self, node, deep=False):
+            def default_tftree_construct_mapping(self, node, deep=False):
                 data = self.construct_mapping_org(node, deep)
                 return {(str(key) if isinstance(key, int) else key): data[key] for key in data}
 
