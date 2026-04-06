@@ -95,6 +95,14 @@ class RosTfTreeDotcodeGenerator(object):
             self.listen_duration = 0
 
             yaml_data = tf2_frame_srv.call(FrameGraph.Request()).frame_yaml
+
+            def default_tftree_construct_mapping(self, node, deep=False):
+                data = self.construct_mapping_org(node, deep)
+                return {(str(key) if isinstance(key, int) else key): data[key] for key in data}
+
+            yaml.SafeLoader.construct_mapping_org = yaml.SafeLoader.construct_mapping
+            yaml.SafeLoader.construct_mapping = default_tftree_construct_mapping
+
             data = yaml_parser.safe_load(yaml_data)
             self.graph = self.generate(data, timer.now().nanoseconds / S_TO_NS)
             self.dotcode = self.dotcode_factory.create_dot(self.graph)
