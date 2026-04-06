@@ -2,6 +2,13 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.6 (2026-04-06)
+------------------
+* int object has no attribute strip (`#52 <https://github.com/ros-visualization/rqt_tf_tree//issues/52>`_)
+* Capability: Add CI  (`#54 <https://github.com/ros-visualization/rqt_tf_tree//issues/54>`_)
+* Capability: Add CI using ICI (similar to https://github.com/ros-visualization/rqt_robot_steering/pull/27)
+* Contributors: Alejandro Hernández Cordero, Isaac Saito
+
 1.0.5 (2024-06-14)
 ------------------
 * Explicitly import clock to fix test fail in Humble (`#50 <https://github.com/ros-visualization/rqt_tf_tree/issues/50>`_)
