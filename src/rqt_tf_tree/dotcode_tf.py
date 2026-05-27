@@ -39,13 +39,11 @@ import yaml
 
 
 class _TfTreeYamlLoader(yaml.SafeLoader):
-    """Dedicated YAML loader for the FrameGraph payload.
+    """
+    YAML loader for the FrameGraph payload.
 
-    Stringifies integer mapping keys without polluting the global
-    yaml.SafeLoader — earlier revisions monkey-patched SafeLoader on every
-    refresh, which was non-idempotent and caused infinite recursion on the
-    second invocation (https://github.com/ros-visualization/rqt_tf_tree
-    issue tracker).
+    Stringifies integer mapping keys without monkey-patching the global
+    yaml.SafeLoader, which caused infinite recursion on repeat calls.
     """
 
 
