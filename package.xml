@@ -14,6 +14,8 @@
   <url type="repository">https://github.com/ros-visualization/rqt_tf_tree</url>
   <url type="bugtracker">https://github.com/ros-visualization/rqt_tf_tree/issues</url>
 
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
   <test_depend>python3-pytest</test_depend>
 
   <exec_depend version_gte="0.2.19">python_qt_binding</exec_depend>

@@ -32,9 +32,6 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import unittest
-
-import rclpy.client
-
 from unittest.mock import Mock
 
 from rqt_tf_tree.dotcode_tf import RosTfTreeDotcodeGenerator
@@ -44,11 +41,11 @@ class DotcodeGeneratorTest(unittest.TestCase):
 
     def test_generate_dotcode(self):
         yaml_data = {'frame1': {'parent': 'fr_parent',
-                                        'broadcaster': 'fr_broadcaster',
-                                        'rate': 'fr_rate',
-                                        'buffer_length': 'fr_buffer_length',
-                                        'most_recent_transform': 'fr_most_recent_transform',
-                                        'oldest_transform': 'fr_oldest_transform',}}
+                                'broadcaster': 'fr_broadcaster',
+                                'rate': 'fr_rate',
+                                'buffer_length': 'fr_buffer_length',
+                                'most_recent_transform': 'fr_most_recent_transform',
+                                'oldest_transform': 'fr_oldest_transform'}}
         frameClientMock = Mock()
         frameClientMock.call.return_value.frame_yaml = str(yaml_data)
 
@@ -60,7 +57,7 @@ class DotcodeGeneratorTest(unittest.TestCase):
         yamlmock = Mock()
         yamlmock.load.return_value = yaml_data
 
-        factoryMock.create_dot.return_value = "foo"
+        factoryMock.create_dot.return_value = 'foo'
         factoryMock.get_graph.return_value = graphMock
 
         gen = RosTfTreeDotcodeGenerator(0)
@@ -74,4 +71,3 @@ class DotcodeGeneratorTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
