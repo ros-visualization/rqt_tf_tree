@@ -2,6 +2,14 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.0 (2026-06-08)
+------------------
+* added flake8 and pep257 (`#60 <https://github.com/ros-visualization/rqt_tf_tree/issues/60>`_)
+* Removed license warning (`#61 <https://github.com/ros-visualization/rqt_tf_tree/issues/61>`_)
+* Replaced the deprecated tests_require=['pytest'] (`#59 <https://github.com/ros-visualization/rqt_tf_tree/issues/59>`_)
+* Fix some issues (`#58 <https://github.com/ros-visualization/rqt_tf_tree/issues/58>`_)
+* Contributors: Alejandro Hernández Cordero
+
 1.0.6 (2026-04-06)
 ------------------
 * int object has no attribute strip (`#52 <https://github.com/ros-visualization/rqt_tf_tree//issues/52>`_)
