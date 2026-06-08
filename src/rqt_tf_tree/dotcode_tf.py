@@ -31,20 +31,17 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import time
-import rclpy
-import yaml
 
 from rclpy import clock
 from rclpy.constants import S_TO_NS
 from tf2_msgs.srv import FrameGraph
+import yaml
 
 
 class RosTfTreeDotcodeGenerator(object):
 
     def __init__(self, initial_listen_duration=1):
-        """
-        :param initial_listen_duration: how many secs to listen to tf initially.
-        """
+        """:param initial_listen_duration: how many secs to listen to tf initially."""
         self.last_drawargs = None
         self.dotcode = None
         self.firstcall = True
@@ -58,15 +55,13 @@ class RosTfTreeDotcodeGenerator(object):
     def generate_dotcode(self,
                          dotcode_factory,
                          tf2_frame_srv,
-                         timer=rclpy.clock.Clock(),
+                         timer=clock.Clock(),
                          yaml_parser=yaml,
                          rank='same',   # None, same, min, max, source, sink
                          ranksep=0.2,   # vertical distance between layers
                          rankdir='TB',  # direction of layout (TB top > bottom, LR left > right)
                          force_refresh=False):
-        """
-        :param force_refresh: if False, may return same dotcode as last time
-        """
+        """:param force_refresh: if False, may return same dotcode as last time."""
         if self.firstcall is True:
             self.firstcall = False
             force_refresh = True
@@ -135,7 +130,8 @@ class RosTfTreeDotcodeGenerator(object):
             edge_label = '"Broadcaster: %s\\n' % str(tf_frame_values['broadcaster'])
             edge_label += 'Average rate: %s\\n' % str(tf_frame_values['rate'])
             edge_label += 'Buffer length: %s\\n' % str(tf_frame_values['buffer_length'])
-            edge_label += 'Most recent transform: %s\\n' % str(tf_frame_values['most_recent_transform'])
+            edge_label += 'Most recent transform: %s\\n' % \
+                str(tf_frame_values['most_recent_transform'])
             edge_label += 'Oldest transform: %s"' % str(tf_frame_values['oldest_transform'])
             self.dotcode_factory.add_edge_to_graph(graph,
                                                    str(tf_frame_values['parent']),
@@ -150,7 +146,8 @@ class RosTfTreeDotcodeGenerator(object):
                                                root,
                                                style='invis')
 
-        # dot += ' subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";\n'
+        # dot += ' subgraph cluster_legend { style=bold; color=black;'
+        # dot += ' label ="view_frames Result";\n'
         # dot += '"Recorded at time: '+str(rospy.Time.now().to_sec())+'"[ shape=plaintext ] ;\n'
         # dot += '}->"'+root+'"[style=invis];\n}'
         return graph

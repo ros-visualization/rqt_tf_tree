@@ -34,18 +34,17 @@ import os
 
 from ament_index_python import get_resource
 
-from tf2_msgs.srv import FrameGraph
-import tf2_ros
-
 from python_qt_binding import loadUi
 from python_qt_binding.QtCore import QFile, QIODevice, QObject, Qt, Signal
 from python_qt_binding.QtGui import QIcon, QImage, QPainter
-from python_qt_binding.QtWidgets import QFileDialog, QGraphicsScene, QWidget
 from python_qt_binding.QtSvg import QSvgGenerator
-from qt_dotgraph.pydotfactory import PydotFactory
-# from qt_dotgraph.pygraphvizfactory import PygraphvizFactory
+from python_qt_binding.QtWidgets import QFileDialog, QGraphicsScene, QWidget
 from qt_dotgraph.dot_to_qt import DotToQtGenerator
+# from qt_dotgraph.pygraphvizfactory import PygraphvizFactory
+from qt_dotgraph.pydotfactory import PydotFactory
 from rqt_graph.interactive_graphics_view import InteractiveGraphicsView
+from tf2_msgs.srv import FrameGraph
+import tf2_ros
 
 from .dotcode_tf import RosTfTreeDotcodeGenerator
 
@@ -82,7 +81,8 @@ class RosTfTree(QObject):
         loadUi(ui_file, self._widget, {'InteractiveGraphicsView': InteractiveGraphicsView})
         self._widget.setObjectName('RosTfTreeUi')
         if context.serial_number() > 1:
-            self._widget.setWindowTitle(self._widget.windowTitle() + (' (%d)' % context.serial_number()))
+            self._widget.setWindowTitle(
+                self._widget.windowTitle() + (' (%d)' % context.serial_number()))
 
         self._scene = QGraphicsScene()
         self._scene.setBackgroundBrush(Qt.GlobalColor.white)
@@ -129,7 +129,8 @@ class RosTfTree(QObject):
         self._widget.auto_fit_graph_check_box.setChecked(
             instance_settings.value('auto_fit_graph_check_box_state', True) in [True, 'true'])
         self._widget.highlight_connections_check_box.setChecked(
-            instance_settings.value('highlight_connections_check_box_state', True) in [True, 'true'])
+            instance_settings.value(
+                'highlight_connections_check_box_state', True) in [True, 'true'])
         self.initialized = True
         self._refresh_tf_graph()
 
