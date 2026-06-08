@@ -85,7 +85,7 @@ class RosTfTree(QObject):
             self._widget.setWindowTitle(self._widget.windowTitle() + (' (%d)' % context.serial_number()))
 
         self._scene = QGraphicsScene()
-        self._scene.setBackgroundBrush(Qt.white)
+        self._scene.setBackgroundBrush(Qt.GlobalColor.white)
         self._widget.graphics_view.setScene(self._scene)
 
         self._widget.clear_buffer_push_button.setIcon(QIcon.fromTheme('edit-delete'))
@@ -96,7 +96,10 @@ class RosTfTree(QObject):
 
         self._widget.highlight_connections_check_box.toggled.connect(self._redraw_graph_view)
         self._widget.auto_fit_graph_check_box.toggled.connect(self._redraw_graph_view)
-        self._widget.fit_in_view_push_button.setIcon(QIcon.fromTheme('zoom-original'))
+        # 'zoom-fit-best' is the freedesktop standard name; fall back to the
+        # legacy 'zoom-best-fit' for themes (e.g. ubuntu-mono-*) that lack it.
+        self._widget.fit_in_view_push_button.setIcon(
+            QIcon.fromTheme('zoom-fit-best', QIcon.fromTheme('zoom-best-fit')))
         self._widget.fit_in_view_push_button.pressed.connect(self._fit_in_view)
 
         self._widget.load_dot_push_button.setIcon(QIcon.fromTheme('document-open'))
@@ -109,7 +112,7 @@ class RosTfTree(QObject):
         self._widget.save_as_image_push_button.pressed.connect(self._save_image)
 
         self._deferred_fit_in_view.connect(self._fit_in_view,
-                                           Qt.QueuedConnection)
+                                           Qt.ConnectionType.QueuedConnection)
         self._deferred_fit_in_view.emit()
 
         context.add_widget(self._widget)
@@ -206,7 +209,7 @@ class RosTfTree(QObject):
 
     def _fit_in_view(self):
         self._widget.graphics_view.fitInView(self._scene.itemsBoundingRect(),
-                                             Qt.KeepAspectRatio)
+                                             Qt.AspectRatioMode.KeepAspectRatio)
 
     def _save_dot(self):
         file_name, _ = QFileDialog.getSaveFileName(self._widget,
@@ -217,10 +220,13 @@ class RosTfTree(QObject):
             return
 
         file = QFile(file_name)
-        if not file.open(QIODevice.WriteOnly | QIODevice.Text):
+        if not file.open(QIODevice.OpenModeFlag.WriteOnly | QIODevice.OpenModeFlag.Text):
             return
 
-        file.write(self._current_dotcode)
+        dotcode = self._current_dotcode
+        if isinstance(dotcode, str):
+            dotcode = dotcode.encode()
+        file.write(dotcode)
         file.close()
 
     def _save_svg(self):
@@ -237,7 +243,7 @@ class RosTfTree(QObject):
         generator.setSize((self._scene.sceneRect().size() * 2.0).toSize())
 
         painter = QPainter(generator)
-        painter.setRenderHint(QPainter.Antialiasing)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         self._scene.render(painter)
         painter.end()
 
@@ -251,9 +257,9 @@ class RosTfTree(QObject):
             return
 
         img = QImage((self._scene.sceneRect().size() * 2.0).toSize(),
-                     QImage.Format_ARGB32_Premultiplied)
+                     QImage.Format.Format_ARGB32_Premultiplied)
         painter = QPainter(img)
-        painter.setRenderHint(QPainter.Antialiasing)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         self._scene.render(painter)
         painter.end()
         img.save(file_name)
