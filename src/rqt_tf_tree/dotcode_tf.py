@@ -38,6 +38,24 @@ from tf2_msgs.srv import FrameGraph
 import yaml
 
 
+class _TfTreeYamlLoader(yaml.SafeLoader):
+    """
+    YAML loader for the FrameGraph payload.
+
+    Stringifies integer mapping keys without monkey-patching the global
+    yaml.SafeLoader, which caused infinite recursion on repeat calls.
+    """
+
+
+def _stringify_int_keys(loader, node, deep=False):
+    data = yaml.SafeLoader.construct_mapping(loader, node, deep)
+    return {(str(k) if isinstance(k, int) else k): data[k] for k in data}
+
+
+_TfTreeYamlLoader.add_constructor(
+    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _stringify_int_keys)
+
+
 class RosTfTreeDotcodeGenerator(object):
 
     def __init__(self, initial_listen_duration=1):
@@ -91,18 +109,7 @@ class RosTfTreeDotcodeGenerator(object):
 
             yaml_data = tf2_frame_srv.call(FrameGraph.Request()).frame_yaml
 
-            # Patch SafeLoader.construct_mapping only once. Re-patching would
-            # save the already-patched function as construct_mapping_org,
-            # causing it to call itself recursively (RecursionError).
-            if not hasattr(yaml.SafeLoader, 'construct_mapping_org'):
-                def default_tftree_construct_mapping(self, node, deep=False):
-                    data = self.construct_mapping_org(node, deep)
-                    return {(str(key) if isinstance(key, int) else key): data[key] for key in data}
-
-                yaml.SafeLoader.construct_mapping_org = yaml.SafeLoader.construct_mapping
-                yaml.SafeLoader.construct_mapping = default_tftree_construct_mapping
-
-            data = yaml_parser.safe_load(yaml_data)
+            data = yaml_parser.load(yaml_data, Loader=_TfTreeYamlLoader)
             self.graph = self.generate(data, timer.now().nanoseconds / S_TO_NS)
             self.dotcode = self.dotcode_factory.create_dot(self.graph)
 
