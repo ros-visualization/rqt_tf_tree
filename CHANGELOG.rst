@@ -2,6 +2,13 @@
 Changelog for package rqt_tf_tree
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.1 (2026-07-15)
+------------------
+* Add missing dependency on tf2_ros_py (`#63 <https://github.com/ros-visualization/rqt_tf_tree/issues/63>`_)
+* Replace SafeLoader monkey-patch with dedicated YAML loader subclass (`#56 <https://github.com/ros-visualization/rqt_tf_tree/issues/56>`_)
+* Replace SafeLoader monkey-patch with dedicated YAML loader subclass
+* Contributors: Arne Hitzmann, Rafal Gorecki, Tim Clephas
+
 1.1.0 (2026-06-08)
 ------------------
 * added flake8 and pep257 (`#60 <https://github.com/ros-visualization/rqt_tf_tree/issues/60>`_)
