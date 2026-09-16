@@ -19,6 +19,8 @@
   <test_depend>python3-pytest</test_depend>
 
   <exec_depend version_gte="0.2.19">python_qt_binding</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
   <exec_depend>qt_dotgraph</exec_depend>
   <exec_depend>rclpy</exec_depend>
   <exec_depend>rqt_graph</exec_depend>
